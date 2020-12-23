@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// API Resource Route Spacial -- Because it doesn't have Create and Edit Method in controller
+// Make controller --api argument
+Route::apiResource('api-resource', \App\Http\Controllers\APIResource::class);

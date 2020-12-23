@@ -29,3 +29,7 @@ Route::resources([
     'many1'=> \App\Http\Controllers\manyResource1::class,
     'many2'=> \App\Http\Controllers\manyResource2::class
 ]);
+
+// Partial resource route Using except or only
+Route::resource('part-of-resource', \App\Http\Controllers\PartialResource::class)->except('store');
+Route::resource('part-of-resource2', \App\Http\Controllers\PartialResource2::class)->only('store');
