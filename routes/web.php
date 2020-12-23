@@ -23,3 +23,9 @@ Route::get('/needs-to-login', [\App\Http\Controllers\ControllerWithMiddlewire::c
     ->middleware('auth');
 Route::get('/needs-to-login2', [\App\Http\Controllers\ControllerWithMiddlewire::class, 'middlewareFromConstructor']);
 Route::get('/needs-to-login3', [\App\Http\Controllers\ControllerWithMiddlewire::class, 'noMiddleware']);
+
+// Registering Many Resource Controller At once. Remember to give as a associative array.
+Route::resources([
+    'many1'=> \App\Http\Controllers\manyResource1::class,
+    'many2'=> \App\Http\Controllers\manyResource2::class
+]);
