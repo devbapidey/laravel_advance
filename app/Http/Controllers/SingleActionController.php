@@ -14,6 +14,6 @@ class SingleActionController extends Controller
      */
     public function __invoke(Request $request)
     {
-        //
+        return "Hello From Single Action Controller Or Invokeable Controller!";
     }
 }
