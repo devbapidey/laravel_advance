@@ -17,4 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Hello', \App\Http\Controllers\SingleActionController::class); // Single Access Controller
+Route::get('/hello', \App\Http\Controllers\SingleActionController::class); // Single Access Controller
+
+Route::get('/needs-to-login', [\App\Http\Controllers\ControllerWithMiddlewire::class, 'middlewareFromRoute'])
+    ->middleware('auth');
+Route::get('/needs-to-login2', [\App\Http\Controllers\ControllerWithMiddlewire::class, 'middlewareFromConstructor']);
+Route::get('/needs-to-login3', [\App\Http\Controllers\ControllerWithMiddlewire::class, 'noMiddleware']);
